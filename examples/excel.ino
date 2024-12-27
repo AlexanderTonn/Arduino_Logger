@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <logger.hpp>
 
-logger _loggerError;
+logger _loggerData;
 SdFat _SdFat;
 
 constexpr static uint8_t SPI_CS = 10;
@@ -12,14 +12,14 @@ void setup() {
   Serial.begin(115200);
   delay(2000);
 
- _loggerError.busInit(23, _SdFat);
- _loggerError.setupLogFile("LOG/DAT", logger::fileType::CSV, 10000, _SdFat);
- _loggerError.checkInit();
+ _loggerData.busInit(23, _SdFat);
+ _loggerData.setupLogFile("LOG/DAT", logger::fileType::CSV, 10000, _SdFat);
+ _loggerData.checkInit();
 
 }
 
 void loop() {
-  _loggerError.logData("Test Data", _SdFat);
+  _loggerData.logData("Test Data", _SdFat);
 
   delay(1000);
 }
