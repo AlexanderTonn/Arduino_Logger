@@ -1,0 +1,7 @@
+{
+    "version": 1,
+    "author": "Anonymous maker",
+    "editor": "wokwi",
+    "parts": [ { "id": "mega", "type": "wokwi-arduino-mega" } ],
+    "connections": []
+  }
